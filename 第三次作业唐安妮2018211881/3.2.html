@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    function course() {
+        this.coursename = "CSA前端培训";
+        this.semester = 2;
+    }
+    function student(name, age, gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.moreinfo = function () {
+            var detail = function () {
+                console.log(gender);
+            }
+            detail();
+        }
+        course.apply(this);//course.call(this)
+    }
+    var student1 = new student("小明", 18, "男");//写代码实现“学生”继承“课程”，并实现以下效果：
+    //student.prototype=new course();
+    console.log(student1.coursename, student1.semester); //课程名字和第几期
+    student1.moreinfo();//你的性别
+</script>
